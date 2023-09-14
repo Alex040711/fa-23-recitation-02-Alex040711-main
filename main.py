@@ -62,6 +62,12 @@ def span_calc(n, a, b, f):
 
 	Returns: the value of W(n).
 	"""
+	if n == 1:
+    # Base case: W(1) is simply the work done at the leaf node.
+		return f(1)
+	else:
+	    # Recursively calculate W(n) using the recurrence relation.
+	    return a * span_calc(n // b, a, b, f) + f(n)
 	# TODO
 	pass
 
